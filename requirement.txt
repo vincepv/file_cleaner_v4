@@ -1,0 +1,27 @@
+# python version
+
+python 3
+
+# description
+
+functions for data cleaning csv file before upload in DigitaleBox account
+
+this small app is blocks of functions
+
+# env
+
+anaconda is used for running function
+
+# Libraries
+
+pandas
+math
+glob
+
+
+# IMPORTANT output file = need to enter path
+
+go to config.py 
+need to enter folder path who will receive files
+
+#
