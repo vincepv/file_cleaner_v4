@@ -1,6 +1,6 @@
 import pandas as pd
 from config import *
-def generate_firstname_lastname(my_file) :
+def extract_firstname_lastname(my_file) :
     
     """
     Generate FirstName and lastName with email
