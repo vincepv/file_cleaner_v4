@@ -27,3 +27,6 @@ need to enter folder path who will receive files
 # testing
 need to create unit test for each function
 strat unit test for important function only
+
+
+test with macaire
