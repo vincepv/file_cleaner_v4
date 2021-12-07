@@ -78,7 +78,7 @@ def clean_electoral_fr(my_file_to_clean):
         df['adresse2'] = df['adresse2'].str.strip()
 
     # keep begining of first name
-    df['prenom'] = df['prenom'].str.split(n=1, expand=True)
+    df[['prenom','autre prenom']] = df['prenom'].str.split(' ',n=1, expand=True)
     df['prenom'] = df['prenom'].str.capitalize()
     df['nomUsage'] = df['nomUsage'].fillna(df['nomNaissance'])
 
