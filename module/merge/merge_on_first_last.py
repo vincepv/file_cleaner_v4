@@ -16,13 +16,14 @@ def merge_on_first_last(input1,input2):
 
     # clean file for merge, case sensitive
     
-    #df[['a', 'b']]
+    #df1
     df1['prenom'] = df1['prenom'].str.strip()
     df1['nom'] = df1['nom'].str.strip()
 
     df1['nom'] = df1['nom'].str.capitalize()
     df1['prenom'] = df1['prenom'].str.capitalize()
-
+    
+    #df2
     df2['prenom'] = df2['prenom'].str.strip()
     df2['nom'] = df2['nom'].str.strip()
 
