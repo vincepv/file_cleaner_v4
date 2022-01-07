@@ -46,20 +46,9 @@ def merge_on_electoral_phonebook (electoral_list,phone_book):
     df = pd.concat(frames, sort=False)
     
     # clean ".O" string
-    df['cp'] = df['cp'].astype(str)
-    df['cp'] = df['cp'].str.replace('\.0', '', regex=True)
-    df['cp'] = df['cp'].str.replace('nan', '', regex=True)   
-    
-    df['sexe'] = df['sexe'].astype(str)
-    df['sexe'] = df['sexe'].str.replace('\.0', '', regex=True)
-    df['sexe'] = df['sexe'].str.replace('nan', '', regex=True)
-
-    df['mobile'] = df['mobile'].astype(str)
-    df['mobile'] = df['mobile'].str.replace('\.0', '', regex=True)
-    df['mobile'] = df['mobile'].str.replace('nan', '', regex=True)
-
-    df['categorie'] = df['categorie'].astype(str)
-    df['categorie'] = df['categorie'].str.replace('\.0', '', regex=True)
-    df['categorie'] = df['categorie'].str.replace('nan', '', regex=True)
+    column = ['mobile','sexe','cp','categorie']
+    df[column] = df[column].astype(str)
+    df[column] = df[column].replace('\.0', '', regex=True)
+    df[column] = df[column].replace('nan', '', regex=True)
     
     df.to_csv(my_pandas_folder+'MergePhoneBookWithDuplicate.csv', encoding='utf8', index=False)
