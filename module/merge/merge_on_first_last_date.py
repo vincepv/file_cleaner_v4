@@ -1,5 +1,5 @@
 import pandas as pd
-from my_pandas_folder import *
+from config import my_pandas_folder
 # csv utf8 
 def merge_on_first_last_date(input1,input2):
     # input1 = electoral file
@@ -24,8 +24,8 @@ def merge_on_first_last_date(input1,input2):
     dfdup1 = df1[df1.duplicated(['prenom', 'nom', 'date'], keep=False)]
     dfdup2 = df2[df2.duplicated(['prenom', 'nom', 'date'], keep=False)]
     
-    dfdup1.to_csv(my_pandas_folder+'/Duplicate1.csv', encoding='utf8', index=False)
-    dfdup2.to_csv(my_pandas_folder+'/Users/VPV/Desktop/pandas/Duplicate2.csv', encoding='utf8', index=False)
+    dfdup1.to_csv(my_pandas_folder+'Duplicate1.csv', encoding='utf8', index=False)
+    dfdup2.to_csv(my_pandas_folder+'Duplicate2.csv', encoding='utf8', index=False)
     
     # remove duplicate before merge, avoid to merge false data
 
