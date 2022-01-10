@@ -30,12 +30,13 @@ def clean_mobile_fr(clean_mobile_df):
     df['mobile'] = df['mobile'].replace(dic_mobile_number, regex=True)
     df.loc[df['mobile'].duplicated(), ['mobile']] = ''
     
-    dic_clean_mobile = {'\[': '', '\]': '', '\'': ''}    
+        
     
     #extract mobile
     df.insert(loc=0, column='clean_mobile', value='N/A')
     df['clean_mobile'] = df['mobile'].str.findall('^\+33\d{9}')
     df['clean_mobile'] = df['clean_mobile'].astype(str)
+    dic_clean_mobile = {'\[': '', '\]': '', '\'': ''}
     df['clean_mobile'] = df['clean_mobile'].replace(dic_clean_mobile, regex=True)
     df.loc[df['clean_mobile'].duplicated(), ['clean_mobile']] = ''
     
