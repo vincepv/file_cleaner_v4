@@ -2,9 +2,9 @@ import pandas as pd
 from config import *
 
 
-def merge_on_city(input1,input2):
+def merge_on_key(input1,input2):
     """
-    
+    key is used to merge 2 dataframe
 
     """
     # input1 = electoral file
@@ -38,4 +38,4 @@ def merge_on_city(input1,input2):
     
     df = pd.merge(df1, df2, on=[key], how='outer', indicator='Source')
 
-    df.to_csv(my_pandas_folder+'MergeCity.csv', encoding='utf8', index=False)
+    df.to_csv(my_pandas_folder+'mergeOnKey.csv', encoding='utf8', index=False)
