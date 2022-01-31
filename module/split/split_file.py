@@ -10,7 +10,7 @@ def split_file(my_file_to_split):
         my_file_to_split, 
         low_memory=False, 
         encoding='latin1',
-        dtype = {'mobile_clean': np.object},
+        dtype = {'mobile_clean': np.object, 'cp': np.object},
     )
     
     max_number_line_file = 24000
