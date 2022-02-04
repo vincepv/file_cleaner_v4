@@ -4,10 +4,10 @@ def clean_adress_electoral (my_dataframe):
     df = my_dataframe.copy()
     
     # Need to fix : if address column already exist, it delete address
-    
-    df['numero'] = df['numero'].astype(str)
-    df['rue'] = df['rue'].astype(str)
-    df['adresse'] = df['numero']+' '+df['rue']
+    if 'adresse' not in df:
+        df['numero'] = df['numero'].astype(str)
+        df['rue'] = df['rue'].astype(str)
+        df['adresse'] = df['numero']+' '+df['rue']
 
     # clean part
     df['adresse'] = df['adresse'].str.replace(',', '', regex=True)
