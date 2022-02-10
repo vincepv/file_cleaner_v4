@@ -5,12 +5,22 @@ python 3
 # description
 
 functions for data cleaning csv file before upload in DigitaleBox account
-
 this small app is blocks of functions
 
-# env
+# philisophy 
 
-anaconda is used for running function
+take input file (utf8 csv) and generate output file
+output is cleaned by function
+
+workflow is like a step by step: 
+
+function clean_number(file_to_clean) = > generate clean_number
+function clean_date(clean_number) => generate clean_date
+
+So each time you get a file. 
+You chose wich function you want, there is no order.
+
+main.ipynb is the entry point and user interface of this small app
 
 # Libraries
 
