@@ -5,10 +5,10 @@ def clean_column_fr(clean_column_df):
     df = clean_column_df.copy()
     
     if 'prenom' not in df:
-        df.insert(loc=0, column='prenom', value='')
+        df.insert(loc=0, column='prenom', value = None)
 
     if 'nom' not in df:
-        df.insert(loc=0, column='nom', value='')
+        df.insert(loc=0, column='nom', value = None)
 
     if 'sexe' not in df:
         df.insert(loc=0, column='sexe', value='0')
