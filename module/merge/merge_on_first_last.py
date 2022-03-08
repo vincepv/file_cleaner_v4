@@ -1,5 +1,5 @@
 import pandas as pd
-from config import *
+from config import my_pandas_folder
 # csv utf8 
 
 def merge_on_first_last(input1,input2):

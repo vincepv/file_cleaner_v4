@@ -1,8 +1,11 @@
 import pandas as pd
 from config import my_pandas_folder
-# csv utf8 
+ 
 def merge_on_first_last_date(input1,input2):
-    # input1 = electoral file
+    """
+    csv in utf8, merge on lastname + first name + date of birth
+
+    """
     df1 = pd.read_csv(input1, low_memory=False)
     df2 = pd.read_csv(input2, low_memory=False)
 

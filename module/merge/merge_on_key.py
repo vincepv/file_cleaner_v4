@@ -1,5 +1,5 @@
 import pandas as pd
-from config import *
+from config import my_pandas_folder
 
 
 def merge_on_key(input1,input2):

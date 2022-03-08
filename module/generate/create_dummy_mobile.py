@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from my_pandas_folder import *
+from config import my_pandas_folder
 
 def create_dummy_mobile(my_file):
     df = pd.read_csv( my_file ,low_memory = False)

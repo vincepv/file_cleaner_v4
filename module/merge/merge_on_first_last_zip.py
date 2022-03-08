@@ -1,8 +1,14 @@
 import pandas as pd
-from my_pandas_folder import *
-# csv utf8 
+from config import my_pandas_folder
+
+
 def merge_on_first_last_zip(input1,input2):
-    # input1 = electoral file
+    """
+    utf8, merge on firstname, lastname, zip
+
+    """
+
+
     df1 = pd.read_csv(input1, low_memory=False)
     df2 = pd.read_csv(input2, low_memory=False)
     
