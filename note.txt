@@ -1,6 +1,7 @@
 # python version
 
 python 3
+check requirements file
 
 # description
 
@@ -22,14 +23,8 @@ You chose wich function you want, there is no order.
 
 main.ipynb is the entry point and user interface of this small app
 
-# Libraries
 
-pandas
-math
-glob
-
-
-# IMPORTANT output file = need to enter path
+# ! IMPORTANT output file = need to enter your path ! 
 
 go to config.py 
 need to enter folder path who will receive files
