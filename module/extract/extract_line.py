@@ -6,8 +6,16 @@ def extract_line(my_file,column_name,value_to_extract):
     :param column_name: name of the column where extract is process
     :param value_to_extract: value to use for extract in the given column
     >return a new file with only lines matching param
-    Ex. with 2 param
+    Example 1. with 2 param
+    
+    
     df_extract = df.loc[(df[column_name] == value_to_extract) & (df[column_name_2] == value_to_extract_2) ]
+    
+    Going further :  with 'or' logic, extract base on 2 conditions
+    condition_to_extract = (df['nombre'] > 200) | (df['result'] > 30)
+    df_extract = df.loc[condition_to_extract]
+    
+    
     """
     df = pd.read_csv(my_file, low_memory=False)
     df_extract = df.loc[(df[column_name] == value_to_extract)]
