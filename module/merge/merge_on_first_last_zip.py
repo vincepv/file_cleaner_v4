@@ -16,6 +16,7 @@ def merge_on_first_last_zip(input1,input2):
     df2["cp"] = df2["cp"].astype(int)
     
     # clean file for merge, case sensitive
+    
     df1['prenom'] = df1['prenom'].str.strip()
     df1['nom'] = df1['nom'].str.strip()
 
@@ -43,6 +44,10 @@ def merge_on_first_last_zip(input1,input2):
 
     df1 = df1.drop_duplicates(subset=['prenom', 'nom', 'cp'],keep=False)
     df2 = df2.drop_duplicates(subset=['prenom', 'nom', 'cp'],keep=False)
-    df = pd.merge(df1, df2, on=['prenom', 'nom', 'cp'], how='outer', indicator='Source')
+    df_merge = pd.merge(df1, df2, on=['prenom', 'nom', 'cp'], how='left', indicator='Source')
+    
+    # add duplicate at the end of merge. 
+    frames = [df_merge, dfdup1]
+    df = pd.concat(frames, sort=False)
 
     df.to_csv(my_pandas_folder+'MergeFirstLastZip.csv', encoding='utf8', index=False)
