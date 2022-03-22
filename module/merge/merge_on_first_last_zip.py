@@ -46,7 +46,7 @@ def merge_on_first_last_zip(input1,input2):
     df2 = df2.drop_duplicates(subset=['prenom', 'nom', 'cp'],keep=False)
     df_merge = pd.merge(df1, df2, on=['prenom', 'nom', 'cp'], how='left', indicator='Source')
     
-    # add duplicate at the end of merge. 
+    # add duplicate 1 at the end of merge. 
     frames = [df_merge, dfdup1]
     df = pd.concat(frames, sort=False)
 

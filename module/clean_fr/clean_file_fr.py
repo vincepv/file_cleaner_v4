@@ -31,10 +31,12 @@ def clean_file_fr(my_file):
     """
 
     df = pd.read_csv(my_file, low_memory=False, sep=",",encoding="utf-8")
+    # clean column
     df.columns = df.columns.str.lower()
     df.columns = df.columns.str.strip()
-
     df = clean_column_fr(df)
+    
+    # clean process
     df =  clean_empty_name_fr(df)
     df['email'] = clean_email_fr(df)
     df['date'] = clean_date_fr(df)
@@ -42,6 +44,7 @@ def clean_file_fr(my_file):
     df['adresse'] = clean_address_fr(df)
     df['cp'] = clean_zip_fr(df)
     df[['mobile', 'phone_clean','mobile_clean']] = clean_mobile_fr(df)
+
     df = df.drop_duplicates()
     
     df.to_csv(my_pandas_folder+"DraftClean.csv", header=True, index=False, encoding="utf8")

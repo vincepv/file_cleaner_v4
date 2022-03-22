@@ -35,9 +35,12 @@ def clean_electoral_fr(my_file_to_clean):
     """
 
     df = pd.read_csv(my_file_to_clean, low_memory=False)
-    df = df.rename(columns=rename_column)
     
-    df = clean_electoral_col(df)     
+    # clean header column
+    df = df.rename(columns=rename_column)
+    df = clean_electoral_col(df) 
+    
+    # clean process
     df['Adresse 2 '] = create_adresse2_electoral(df)
     df[['prenom','autre prenom','nomUsage']] = clean_name_electoral(df)
     df['date'] = clean_date_fr(df)
@@ -46,7 +49,8 @@ def clean_electoral_fr(my_file_to_clean):
     df[['mobile', 'clean_phone','clean_mobile']] = clean_mobile_fr(df)
     df['adresse'] = clean_adress_electoral(df) 
     df['mot clef'] = create_keyword_electoral(df)
-
+    
+    # remove duplicate
     df = df.drop_duplicates(subset=['prenom', 'nomUsage', 'nomNaissance', 'date'],keep='first')
     
     df.to_csv(my_pandas_folder+"clean_electoral.csv", header=True, index=False, encoding="utf8")
