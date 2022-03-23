@@ -1,6 +1,8 @@
 import pandas as pd
 import glob
 from config import *
+
+
 def merge_excel(excel_folder):
     """
     convert excel folder in one master utf8 csv file

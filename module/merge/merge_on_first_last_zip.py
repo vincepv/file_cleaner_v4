@@ -8,7 +8,6 @@ def merge_on_first_last_zip(input1,input2):
 
     """
 
-
     df1 = pd.read_csv(input1, low_memory=False)
     df2 = pd.read_csv(input2, low_memory=False)
     
