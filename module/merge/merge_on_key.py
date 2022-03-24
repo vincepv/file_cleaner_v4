@@ -5,6 +5,7 @@ from config import my_pandas_folder
 def merge_on_key(input1,input2):
     """
     key is used to merge 2 dataframe
+    by default merge on left, file 1 is used
 
     """
 
