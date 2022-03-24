@@ -12,8 +12,11 @@ def merge_on_key(input1,input2):
     df2 = pd.read_csv(input2, low_memory=False)
 
     # key is used to merge 2 files
-    # bug when key is int
-    key = ['nom','prenom']
+    # key = ['prenom','nom','cp'] or key = ['prenom']
+    key = ['prenom','nom','cp']
+
+    df1[key] = df1[key].astype(str)
+    df2[key] = df2[key].astype(str)
     
     # clean file for merge, because case sensitive
     # remove space and uppercase 
@@ -34,10 +37,15 @@ def merge_on_key(input1,input2):
     df1 = df1.drop_duplicates(subset=key, keep=False)
     df2 = df2.drop_duplicates(subset=key, keep=False)
     
-    df = pd.merge(df1, df2, on=key, how='outer', indicator='match status')
+    df = pd.merge(df1, df2, on=key, how='left', indicator='match status')
 
     # add duplicate 1 at the end of merge. 
     frames = [df, df1_duplicate]
     df = pd.concat(frames, sort=False)
+
+    # clean ending .0 
+    df = df.astype(str)
+    df = df.replace('\.0', '', regex=True)
+    df = df.replace('nan', '', regex=True)
 
     df.to_csv(my_pandas_folder+'mergeOnKey.csv', encoding='utf8', index=False)
