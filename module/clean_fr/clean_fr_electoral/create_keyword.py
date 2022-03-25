@@ -6,7 +6,7 @@ def create_keyword_electoral (my_dataframe):
     if 'numero bv' in df:
         df['numero bv'] = df['numero bv'].astype(str)
         df['numero bv'] = df['numero bv'].str.replace('\.0$', '', regex=True)
-        df['mot clef'] = df['mot clef']+',BV '+df['numero bv']
+        df['mot clef'] = df['mot clef']+',BV '+df['numero bv']+',LE2022'
 
 
     df['mot clef'] = df['mot clef'].astype(str)
