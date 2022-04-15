@@ -49,4 +49,4 @@ def clean_file_fr(my_file):
 
     df = df.drop_duplicates()
     
-    df.to_csv(my_pandas_folder+"DraftClean.csv", header=True, index=False, encoding="utf8")
+    df.to_csv(my_pandas_folder+"DraftClean.csv", header=True, index=False, encoding="latin1")
