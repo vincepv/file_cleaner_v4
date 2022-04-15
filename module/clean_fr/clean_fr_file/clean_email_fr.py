@@ -14,6 +14,8 @@ def clean_email_fr(clean_email_df):
         'é': 'e',
         'è': 'e',
         '@@':'@',
+        '<':'',
+        '>':'',
         
         }
 
