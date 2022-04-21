@@ -7,3 +7,13 @@
 # Warning ! Backslash on Windows and Forward Slash on macOS and Linux !
 my_pandas_folder = "/Users/VPV/Desktop/pandas/"
 
+# column name
+COUNTRY = 'pays'
+CITY = 'ville'
+ZIP = 'cp'
+MOBILE = 'mobile'
+DATE_OF_BIRTH = 'date'
+FIRST_NAME = 'prenom'
+LAST_NAME = 'nom'
+GENDER = 'sexe'
+
