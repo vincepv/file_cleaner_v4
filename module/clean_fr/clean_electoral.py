@@ -41,7 +41,7 @@ def clean_electoral_fr(my_file_to_clean):
     df = clean_electoral_col(df) 
     
     # clean process
-    df['Adresse 2 '] = create_adresse2_electoral(df)
+    df['adresse 2 '] = create_adresse2_electoral(df)
     df[['prenom','autre prenom','nomUsage']] = clean_name_electoral(df)
     df['date'] = clean_date_fr(df)
     df['sexe'] = clean_gender_fr(df)

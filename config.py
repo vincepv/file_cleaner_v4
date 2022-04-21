@@ -10,10 +10,19 @@ my_pandas_folder = "/Users/VPV/Desktop/pandas/"
 # column name
 COUNTRY = 'pays'
 CITY = 'ville'
+ADDRESS = 'adresse'
+NUMBER = 'numero'
+STREET = 'rue'
 ZIP = 'cp'
 MOBILE = 'mobile'
+
 DATE_OF_BIRTH = 'date'
+GENDER = 'sexe'
+
 FIRST_NAME = 'prenom'
 LAST_NAME = 'nom'
-GENDER = 'sexe'
+COMMON_NAME = 'nomUsage'
+BIRTH_NAME = 'nomNaissance'
+
+
 

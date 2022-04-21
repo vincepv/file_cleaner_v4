@@ -1,21 +1,21 @@
 import pandas as pd
 
+from config import NUMBER ,STREET , ADDRESS
+
 def clean_adress_electoral (my_dataframe):
     df = my_dataframe.copy()
     
     # Need to fix : if address column already exist, it delete address
     
-    df['numero'] = df['numero'].astype(str)
-    df['rue'] = df['rue'].astype(str)
-    df['adresse'] = df['numero']+' '+df['rue']
+    df[NUMBER] = df[NUMBER].astype(str)
+    df[STREET] = df[STREET].astype(str)
+    df[ADDRESS] = df[NUMBER]+' '+df[STREET]
 
     # clean part
-    df['adresse'] = df['adresse'].str.replace(',', '', regex=True)
-    df['adresse'] = df['adresse'].str.replace('^ ', '', regex=True)
-    df['adresse'] = df['adresse'].str.replace(' $', '', regex=True)
+    df[ADDRESS] = df[ADDRESS].str.replace(',', '', regex=True)
+    df[ADDRESS] = df[ADDRESS].str.replace('^ ', '', regex=True)
+    df[ADDRESS] = df[ADDRESS].str.replace(' $', '', regex=True)
+    df[ADDRESS] = df[ADDRESS].str.replace('nan', '', regex=True)
+    df[ADDRESS] = df[ADDRESS].str.replace('N/A N/A', 'N/A', regex=True)
 
-    
-    df['adresse'] = df['adresse'].str.replace('nan', '', regex=True)
-    df['adresse'] = df['adresse'].str.replace('N/A N/A', 'N/A', regex=True)
-
-    return df['adresse']
+    return df[ADDRESS]
