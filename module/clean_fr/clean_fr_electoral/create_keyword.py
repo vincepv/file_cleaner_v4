@@ -1,18 +1,19 @@
 import pandas as pd
+from config import KEYWORD, POLLING_STATION
 
 def create_keyword_electoral (my_dataframe):
     df = my_dataframe.copy()
 
-    if 'numero bv' in df:
-        df['numero bv'] = df['numero bv'].astype(str)
-        df['numero bv'] = df['numero bv'].str.replace('\.0$', '', regex=True)
-        df['mot clef'] = df['mot clef']+',BV '+df['numero bv']+',LE2022'
+    if POLLING_STATION in df:
+        df[POLLING_STATION] = df[POLLING_STATION].astype(str)
+        df[POLLING_STATION] = df[POLLING_STATION].str.replace('\.0$', '', regex=True)
+        df[KEYWORD] = df[KEYWORD]+',BV '+df[POLLING_STATION]+',LE2022'
 
 
-    df['mot clef'] = df['mot clef'].astype(str)
-    df['mot clef'] = df['mot clef'].str.replace('\.0$', '', regex=True)
-    df['mot clef'] = df['mot clef'].str.replace('nan', '', regex=True)
-    df['mot clef'] = df['mot clef'].str.replace('^,', '', regex=True)
-    df['mot clef'] = df['mot clef'].str.replace(';', ',', regex=True)
+    df[KEYWORD] = df[KEYWORD].astype(str)
+    df[KEYWORD] = df[KEYWORD].str.replace('\.0$', '', regex=True)
+    df[KEYWORD] = df[KEYWORD].str.replace('nan', '', regex=True)
+    df[KEYWORD] = df[KEYWORD].str.replace('^,', '', regex=True)
+    df[KEYWORD] = df[KEYWORD].str.replace(';', ',', regex=True)
 
-    return df['mot clef']
+    return df[KEYWORD]
