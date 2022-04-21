@@ -2,7 +2,7 @@ import pandas as pd
 
 from config import NUMBER ,STREET , ADDRESS
 
-def clean_adress_electoral (my_dataframe):
+def clean_address_electoral (my_dataframe):
     df = my_dataframe.copy()
     
     # Need to fix : if address column already exist, it delete address
