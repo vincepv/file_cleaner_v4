@@ -9,13 +9,17 @@ def clean_address_electoral (my_dataframe):
     
     df[NUMBER] = df[NUMBER].astype(str)
     df[STREET] = df[STREET].astype(str)
+    df[[NUMBER,STREET]] = df[[NUMBER,STREET]].replace('nan', '')
     df[ADDRESS] = df[NUMBER]+' '+df[STREET]
 
     # clean part
-    df[ADDRESS] = df[ADDRESS].str.replace(',', '', regex=True)
-    df[ADDRESS] = df[ADDRESS].str.replace('^ ', '', regex=True)
-    df[ADDRESS] = df[ADDRESS].str.replace(' $', '', regex=True)
-    df[ADDRESS] = df[ADDRESS].str.replace('nan', '', regex=True)
-    df[ADDRESS] = df[ADDRESS].str.replace('N/A N/A', 'N/A', regex=True)
+    clean_character = {
+        ',':'',
+        '^ ':'',
+        ' $':'',
+        '/':' ',
+        '_':' ', 
+    }
 
+    df[ADDRESS] = df[ADDRESS].replace(clean_character, regex=True)
     return df[ADDRESS]
