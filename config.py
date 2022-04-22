@@ -1,4 +1,4 @@
-# config file
+# Config file
 
 # Todo : create empty folder in your computer. 
 # This folder receives processed files
@@ -8,7 +8,7 @@
 
 my_pandas_folder = "/Users/VPV/Desktop/pandas/"
 
-# column name
+# Column name : change it according to your file header
 COUNTRY = 'pays'
 CITY = 'ville'
 ADDRESS = 'adresse'
