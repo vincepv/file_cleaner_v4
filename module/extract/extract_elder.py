@@ -1,7 +1,8 @@
 import pandas as pd
-from config import *
+from config import my_pandas_folder
 
 def extract_elder(my_file_with_elder):
+
 
     df = pd.read_csv(my_file_with_elder, index_col=None, header=0, sep=',', low_memory=False)
     df['date_year'] = df['date de naissance'].str[-4:]

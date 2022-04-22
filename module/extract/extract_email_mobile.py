@@ -1,6 +1,9 @@
 import pandas as pd
-from config import *
+from config import my_pandas_folder
+
 def extract_email_mobile(my_file):
+
+
     df = pd.read_csv(my_file, low_memory=False)
     
     df.insert(loc=0, column='email_extract', value='')

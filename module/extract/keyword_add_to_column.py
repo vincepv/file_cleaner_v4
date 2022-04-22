@@ -1,6 +1,5 @@
 import pandas as pd
-
-from config import *
+from config import my_pandas_folder
 
 
 def keyword_add_to_column(my_file):

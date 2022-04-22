@@ -1,5 +1,6 @@
 import pandas as pd
-from config import *
+from config import my_pandas_folder
+
 def extract_firstname_lastname(my_file) :
     
     """
