@@ -15,10 +15,11 @@ my_pandas_folder = "/Users/VPV/Desktop/pandas/"
 COUNTRY = 'pays'
 CITY = 'ville'
 ADDRESS = 'adresse'
+ADDRESS_2 = 'adresse2'
 NUMBER = 'numero'
 STREET = 'rue'
 ZIP = 'cp'
-MOBILE = 'mobile'
+
 
 DATE_OF_BIRTH = 'date'
 GENDER = 'sexe'
@@ -32,6 +33,7 @@ CATEGORY = 'categorie'
 NOTE = 'note'
 KEYWORD = 'mot clef'
 
+MOBILE = 'mobile'
 EMAIL = 'email'
 POLLING_STATION = "numero bv"
 
