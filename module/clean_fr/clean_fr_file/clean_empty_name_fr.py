@@ -1,4 +1,5 @@
 import pandas as pd
+from config import FIRST_NAME, LAST_NAME, ORGANISATION
 
 def clean_empty_name_fr(clean_empty_name_column):
     
@@ -8,9 +9,9 @@ def clean_empty_name_fr(clean_empty_name_column):
     
     df = clean_empty_name_column.copy()
     
-    if 'organisme' in df:
-        df['nom'] = df['nom'].fillna(df['organisme'])
-        df['prenom'] = df['prenom'].fillna(df['organisme'])
+    if ORGANISATION in df:
+        df[LAST_NAME] = df[LAST_NAME].fillna(df[ORGANISATION])
+        df[FIRST_NAME] = df[FIRST_NAME].fillna(df[ORGANISATION])
 
     dic_organisme_clean = {
         '\'':' ',
@@ -27,6 +28,6 @@ def clean_empty_name_fr(clean_empty_name_column):
         '(?<=^.{45}).+':'',
     }
     
-    df[['nom','prenom']] = df[['nom','prenom']].replace(dic_organisme_clean, regex=True)
-    clean_empty_name_done  = df
+    df[[LAST_NAME,FIRST_NAME]] = df[[LAST_NAME,FIRST_NAME]].replace(dic_organisme_clean, regex=True)
+    clean_empty_name_done  = df[[LAST_NAME,FIRST_NAME]]
     return clean_empty_name_done

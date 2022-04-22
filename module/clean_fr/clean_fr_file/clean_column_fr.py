@@ -1,51 +1,57 @@
 import pandas as pd
+from config import *
 
 def clean_column_fr(clean_column_df):
+    """
+    
+    Add missing columns
+
+    """
     
     df = clean_column_df.copy()
     
-    if 'prenom' not in df:
-        df.insert(loc=0, column='prenom', value = None)
+    if FIRST_NAME not in df:
+        df.insert(loc=0, column=FIRST_NAME, value = None)
 
-    if 'nom' not in df:
-        df.insert(loc=0, column='nom', value = None)
+    if LAST_NAME not in df:
+        df.insert(loc=0, column=LAST_NAME, value = None)
 
-    if 'sexe' not in df:
-        df.insert(loc=0, column='sexe', value='0')
+    if GENDER not in df:
+        df.insert(loc=0, column=GENDER, value='0')
 
-    if 'date' not in df:
-        df.insert(loc=0, column='date', value='')
+    if DATE_OF_BIRTH not in df:
+        df.insert(loc=0, column=DATE_OF_BIRTH, value='')
 
-    if 'mobile' not in df:
-        df.insert(loc=0, column='mobile', value='')
+    if MOBILE not in df:
+        df.insert(loc=0, column=MOBILE, value='')
 
-    if 'adresse' not in df:
-        df.insert(loc=0, column='adresse', value='')
+    if ADDRESS not in df:
+        df.insert(loc=0, column=ADDRESS, value='')
     
-    if 'ville' not in df:
-        df.insert(loc=0, column='ville', value='')
+    if CITY not in df:
+        df.insert(loc=0, column=CITY, value='')
 
-    if 'cp' not in df:
-        df.insert(loc=0, column='cp', value='')
+    if ZIP not in df:
+        df.insert(loc=0, column=ZIP, value='')
     
-    if 'pays' not in df:
-        df.insert(loc=0, column='pays', value='FR')
+    if COUNTRY not in df:
+        df.insert(loc=0, column=COUNTRY, value='FR')
     else:
-        df['pays'] = df['pays'].astype(str)
-        df['pays'] = df['pays'].replace(['FRANCE','france','France'],'FR')
-        df['pays'] = df['pays'].replace(['nan'],'N/A')
+        df[COUNTRY] = df[COUNTRY].astype(str)
+        df[COUNTRY] = df[COUNTRY].replace(['FRANCE','france','France'],'FR')
+        df[COUNTRY] = df[COUNTRY].replace(['nan'],'N/A')
 
-    if 'categorie' not in df:
-        df.insert(loc=0, column='categorie', value='2')
-    if 'note' not in df:
-        df.insert(loc=0, column='note', value='')
-    if 'mot clef' not in df:
-        df.insert(loc=0, column='mot clef', value='')
+    if CATEGORY not in df:
+        df.insert(loc=0, column=CATEGORY, value='2')
+    if NOTE not in df:
+        df.insert(loc=0, column=NOTE, value='')
+    if KEYWORD not in df:
+        df.insert(loc=0, column=KEYWORD, value='')
     else:
-        df['mot clef'] = df['mot clef'].str.strip(to_strip=",")
+        df[KEYWORD] = df[KEYWORD].str.strip(to_strip=",")
         
-    if 'email' not in df:
-        df.insert(loc=0, column='email', value='')
+    if EMAIL not in df:
+        df.insert(loc=0, column=EMAIL, value='')
         
     clean_column_done  = df
 
