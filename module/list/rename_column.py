@@ -1,11 +1,11 @@
-from config import BIRTH_NAME, CITY, COMMON_NAME, DATE_OF_BIRTH, FIRST_NAME, NUMBER, STREET, ZIP 
+from config import BIRTH_NAME, CITY, COMMON_NAME, DATE_OF_BIRTH, FIRST_NAME, NUMBER, POLLING_STATION, STREET, ZIP 
 
 rename_column = {
     "numéro de voie": NUMBER,
     "NumeroVoie": NUMBER,
     "commune": CITY,
-    "code du bureau de vote": "numero bv",
-    "NoBureauDeVote": "numero bv",
+    "code du bureau de vote": POLLING_STATION,
+    "NoBureauDeVote": POLLING_STATION,
     "libellé de voie": STREET,
     "LibelleVoie": STREET,
     "code postal": ZIP,
