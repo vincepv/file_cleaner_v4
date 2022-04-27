@@ -13,7 +13,7 @@ def split_file(my_file_to_split):
         dtype = {'mobile_clean': np.object, 'cp': np.object},
     )
     
-    max_number_line_file = 24000
+    max_number_line_file = 24900
     number_chunk = math.ceil(len(df)/max_number_line_file)
     df = np.array_split(df, number_chunk)
     # df[0] = first array, last array df[n-1].

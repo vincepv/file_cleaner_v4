@@ -1,10 +1,12 @@
 import pandas as pd
-from config import *
+from config import my_pandas_folder
+
 def extract_line(my_file,column_name,value_to_extract):
     """
-    :param my_file: name of the file to process
-    :param column_name: name of the column where extract is process
-    :param value_to_extract: value to use for extract in the given column
+    my_file: name of the file to process
+    column_name: name of the column where extract is process
+    value_to_extract: value to use for extract in the given column
+
     >return a new file with only lines matching param
     Example 1. with 2 param
     

@@ -1,22 +1,23 @@
 import pandas as pd
+from config import GENDER
 
 def clean_gender_fr(clean_gender_df):
     
     
     df = clean_gender_df.copy()
-    df['sexe'] = df['sexe'].fillna('0')
-    df['sexe'] = df['sexe'].astype(str)
-    df['sexe'] = df['sexe'].str.replace('\.0$', '', regex=True)
-    df['sexe'] = df['sexe'].str.strip()
+    df[GENDER] = df[GENDER].fillna('0')
+    df[GENDER] = df[GENDER].astype(str)
+    df[GENDER] = df[GENDER].str.replace('\.0$', '', regex=True)
+    df[GENDER] = df[GENDER].str.strip()
     man_list = [
         'monsieur', 
         'Monsieur', 
         'MONSIEUR', 
-        'Mr', 
+        'Mr',
         'MR', 
-        'M.', 
-        'M', 
-        'mr', 
+        'M.',
+        'M',
+        'mr',
         'm',
         'Masculin',
         'H',
@@ -40,8 +41,8 @@ def clean_gender_fr(clean_gender_df):
         'Femme'
     ]
     
-    df['sexe'] = df['sexe'].replace(man_list, '2')
-    df['sexe'] = df['sexe'].replace(woman_list, '1')
-    clean_gender_done = df['sexe']
+    df[GENDER] = df[GENDER].replace(man_list, '2')
+    df[GENDER] = df[GENDER].replace(woman_list, '1')
+    clean_gender_done = df[GENDER]
     
     return clean_gender_done

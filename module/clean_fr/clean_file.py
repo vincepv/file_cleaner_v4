@@ -1,6 +1,6 @@
 import pandas as pd
 
-from config import my_pandas_folder
+from config import *
 
 from module.clean_fr.clean_fr_file.clean_column_fr import clean_column_fr
 from module.clean_fr.clean_fr_file.clean_email_fr import clean_email_fr
@@ -15,38 +15,26 @@ from module.clean_fr.clean_fr_file.clean_empty_name_fr import clean_empty_name_f
 def clean_file_fr(my_file):
     """ 
     clean csv file
-
-    column must be renamed
-    'prenom' 
-    'nom' 
-    'sexe' 
-    'adresse'
-    'cp' 
-    'ville'
-    'date' format dd/m/yyyy
-    'note'
-    'mot clef'
-    'email'
-    'mobile' 
+    column must be renamed according to config file
     
     """
 
     df = pd.read_csv(my_file, low_memory=False, sep=",",encoding="utf-8")
+    
     # clean column
     df.columns = df.columns.str.lower()
     df.columns = df.columns.str.strip()
     df = clean_column_fr(df)
     
     # clean process
-    df =  clean_empty_name_fr(df)
-    df['email'] = clean_email_fr(df)
-    df['date'] = clean_date_fr(df)
-    df['sexe'] = clean_gender_fr(df)
-    df['adresse'] = clean_address_fr(df)
-    df['cp'] = clean_zip_fr(df)
-    df[['mobile', 'phone_clean','mobile_clean']] = clean_mobile_fr(df)
-    df['mot clef'] = clean_keyword_fr(df)
-
+    df[[LAST_NAME,FIRST_NAME]] =  clean_empty_name_fr(df)
+    df[EMAIL] = clean_email_fr(df)
+    df[DATE_OF_BIRTH] = clean_date_fr(df)
+    df[GENDER] = clean_gender_fr(df)
+    df[ADDRESS] = clean_address_fr(df)
+    df[ZIP] = clean_zip_fr(df)
+    df[[MOBILE, 'phone_clean','mobile_clean']] = clean_mobile_fr(df)
+    df[KEYWORD] = clean_keyword_fr(df)
     df = df.drop_duplicates()
     
     df.to_csv(my_pandas_folder+"DraftClean.csv", header=True, index=False, encoding="utf8")

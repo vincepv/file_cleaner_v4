@@ -1,10 +1,11 @@
 import pandas as pd
+from config import EMAIL
 
 def clean_email_fr(clean_email_df):
     
     
     df = clean_email_df.copy()
-    df['email'] = df['email'].astype(str)
+    df[EMAIL] = df[EMAIL].astype(str)
     
     dic_email = {
         'à': 'a',
@@ -19,11 +20,11 @@ def clean_email_fr(clean_email_df):
         
         }
 
-    df['email'] = df['email'].replace(dic_email, regex=True)
-    df['email'] = df['email'].replace('nan', '')
-    df['email'] = df['email'].str.strip()
-    df['email'] = df['email'].str.lower()
-    df.loc[df['email'].duplicated(), ['email']] = ''
+    df[EMAIL] = df[EMAIL].replace(dic_email, regex=True)
+    df[EMAIL] = df[EMAIL].replace('nan', '')
+    df[EMAIL] = df[EMAIL].str.strip()
+    df[EMAIL] = df[EMAIL].str.lower()
+    df.loc[df[EMAIL].duplicated(), [EMAIL]] = ''
     
-    clean_email_fr_done = df['email']
+    clean_email_fr_done = df[EMAIL]
     return clean_email_fr_done

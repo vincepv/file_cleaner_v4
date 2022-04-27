@@ -1,52 +1,32 @@
 import pandas as pd
-
+from config import *
 
 def clean_electoral_col(my_dataframe):
     
     df = my_dataframe.copy()
 
-    if 'categorie' not in df:
-        df.insert(loc=0, column='categorie', value='3')
-    if 'note' not in df:
-        df.insert(loc=0, column='note', value='')
-    if 'mot clef' not in df:
-        df.insert(loc=0, column='mot clef', value='')
-    if 'sexe' not in df:
-        df.insert(loc=0, column='sexe', value='0')
+    if CATEGORY not in df:
+        df.insert(loc=0, column=CATEGORY, value='3')
+    if NOTE not in df:
+        df.insert(loc=0, column=NOTE, value='')
+    if KEYWORD not in df:
+        df.insert(loc=0, column=KEYWORD, value='')
     
-    if 'prenom' not in df:
-        df.insert(loc=0, column='prenom', value='prenom a renseigner')
+    if COUNTRY not in df:
+        df.insert(loc=0, column=COUNTRY, value='FR')
     else:
-        df['prenom'] = df['prenom'].fillna('A')
+        df[COUNTRY] = df[COUNTRY].astype(str)
+        df[COUNTRY] = df[COUNTRY].replace(['FRANCE', 'france', 'France'], 'FR')
+        df[COUNTRY] = df[COUNTRY].replace(['nan'], '')
     
-    if 'pays' not in df:
-        df.insert(loc=0, column='pays', value='FR')
+    if MOBILE not in df:
+        df.insert(loc=0, column=MOBILE, value='')
     else:
-        df['pays'] = df['pays'].astype(str)
-        df['pays'] = df['pays'].replace(['FRANCE', 'france', 'France'], 'FR')
-        df['pays'] = df['pays'].replace(['nan'], 'N/A')
-    
-    if 'ville' not in df:
-        df.insert(loc=0, column='ville', value='N/A')
-    if 'cp' not in df:
-        df.insert(loc=0, column='cp', value='N/A')
-    if 'adresse' not in df:
-        df.insert(loc=0, column='adresse', value='N/A')
-    if 'rue' not in df:
-        df.insert(loc=0, column='rue', value='N/A')
-    if 'numero' not in df:
-        df.insert(loc=0, column='numero', value='N/A')
-    if 'date' not in df:
-        df.insert(loc=0, column='date', value='N/A')
-    
-    if 'mobile' not in df:
-        df.insert(loc=0, column='mobile', value='')
-    else:
-        df['mobile'] = df['mobile'].fillna('')
+        df[MOBILE] = df[MOBILE].fillna('')
 
-    if 'email' not in df:
-        df.insert(loc=0, column='email', value='N/A')
+    if EMAIL not in df:
+        df.insert(loc=0, column=EMAIL, value='')
     else:
-        df['email'] = df['email'].fillna('N/A')
+        df[EMAIL] = df[EMAIL].fillna('')
 
     return df
