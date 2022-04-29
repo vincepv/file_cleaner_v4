@@ -38,5 +38,10 @@ def clean_electoral_fr(my_file_to_clean):
     
     # remove duplicate
     df = df.drop_duplicates(subset=[FIRST_NAME, COMMON_NAME, BIRTH_NAME, DATE_OF_BIRTH],keep='first')
-
-    df.to_csv(my_pandas_folder+"clean_electoral.csv", header=True, index=False, encoding="utf8")
+    
+    df.to_csv(
+        my_pandas_folder+"clean_electoral.csv", 
+        header=True, 
+        index=False, 
+        encoding="latin1",
+        )
