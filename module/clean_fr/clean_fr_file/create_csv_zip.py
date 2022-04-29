@@ -1,13 +1,15 @@
 import pandas as pd
 from config import my_pandas_folder
 
-def create_zip_csv_file(my_dataframe):
+def create_csv_zip_file(my_dataframe):
   """
   
   create a csv zip file 
-  encoding latin1
+  
   
   """
+
+
 
   filename = 'cleanFile'
 
