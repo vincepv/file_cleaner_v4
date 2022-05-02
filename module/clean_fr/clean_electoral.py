@@ -43,5 +43,5 @@ def clean_electoral_fr(my_file_to_clean):
         my_pandas_folder+"clean_electoral.csv", 
         header=True, 
         index=False, 
-        encoding="latin1",
+        encoding="utf8",
         )
