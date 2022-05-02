@@ -9,7 +9,8 @@ def create_csv_zip_file(my_dataframe):
   
   """
 
-
+  #need to manage utf8 > latin1 conversion for special character
+  # add a steep to convert utf8 > latin1
 
   filename = 'cleanFile'
 
