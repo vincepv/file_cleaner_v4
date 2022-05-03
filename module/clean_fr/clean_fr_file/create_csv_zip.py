@@ -1,5 +1,7 @@
 import pandas as pd
+
 from config import my_pandas_folder
+
 
 def create_csv_zip_file(my_dataframe):
   """
@@ -9,8 +11,7 @@ def create_csv_zip_file(my_dataframe):
   
   """
 
-  #need to manage utf8 > latin1 conversion for special character
-  # add a steep to convert utf8 > latin1
+  #generate file latin1 csv zip
 
   filename = 'cleanFile'
 
@@ -23,6 +24,6 @@ def create_csv_zip_file(my_dataframe):
     my_pandas_folder+f'{filename}.zip',
     header=True,
     index=False,
-    encoding='latin1',
+    encoding='utf8',
     compression=compression_options,
   )

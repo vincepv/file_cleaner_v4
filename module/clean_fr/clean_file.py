@@ -38,9 +38,4 @@ def clean_file_fr(my_file):
     df[KEYWORD] = clean_keyword_fr(df)
     df = df.drop_duplicates()
     
-    df.to_csv(
-    my_pandas_folder+'cleanFile.csv',
-    header=True,
-    index=False,
-    encoding='utf8',
-  )
+    df.to_csv(my_pandas_folder+'cleanFile.csv',header=True,index=False,encoding='utf8',)
