@@ -19,9 +19,6 @@ def clean_column_fr(clean_column_df):
     if GENDER not in df:
         df.insert(loc=0, column=GENDER, value='0')
 
-    if DATE_OF_BIRTH not in df:
-        df.insert(loc=0, column=DATE_OF_BIRTH, value='')
-
     if MOBILE not in df:
         df.insert(loc=0, column=MOBILE, value='')
 
