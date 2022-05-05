@@ -20,7 +20,13 @@ def clean_file_fr(my_file):
     
     """
 
-    df = pd.read_csv(my_file, low_memory=False, sep=",",encoding="utf-8")
+    df = pd.read_csv(
+        my_file,
+        low_memory=False, 
+        sep=",",
+        encoding="utf-8",
+        parse_dates=[DATE_OF_BIRTH],
+        )
     
     # clean column
     df.columns = df.columns.str.lower()
@@ -30,7 +36,6 @@ def clean_file_fr(my_file):
     # clean process
     df[[LAST_NAME,FIRST_NAME]] =  clean_empty_name_fr(df)
     df[EMAIL] = clean_email_fr(df)
-    df[DATE_OF_BIRTH] = clean_date_fr(df)
     df[GENDER] = clean_gender_fr(df)
     df[ADDRESS] = clean_address_fr(df)
     df[ZIP] = clean_zip_fr(df)

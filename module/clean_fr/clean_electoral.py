@@ -20,7 +20,10 @@ def clean_electoral_fr(my_file_to_clean):
     column must be renamed according to config file
 
     """
-    df = pd.read_csv(my_file_to_clean, low_memory=False)
+    df = pd.read_csv(
+        my_file_to_clean,
+        low_memory=False,
+        parse_dates=[DATE_OF_BIRTH],)
     
     # clean header column
     df = df.rename(columns=rename_column)
@@ -29,7 +32,6 @@ def clean_electoral_fr(my_file_to_clean):
     # clean process
     df[ADDRESS_2] = create_adresse2_electoral(df)
     df[[FIRST_NAME,'other name',COMMON_NAME]] = clean_name_electoral(df)
-    df[DATE_OF_BIRTH] = clean_date_fr(df)
     df[GENDER] = clean_gender_fr(df)
     df[ZIP] = clean_zip_fr(df)
     df[[MOBILE, 'clean_phone','clean_mobile']] = clean_mobile_fr(df)
