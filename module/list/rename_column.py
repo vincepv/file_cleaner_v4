@@ -6,6 +6,7 @@ rename_column = {
     "LibelleVoie": STREET,
     "libelle de voie": STREET,
     "numéro de voie": NUMBER,
+    "numero de voie": NUMBER,
     "NumeroVoie": NUMBER,
     "libelle de l'ugle": CITY,
     "libellé de l'ugle": CITY,
@@ -13,10 +14,14 @@ rename_column = {
     "code du bureau de vote": POLLING_STATION,
     "NoBureauDeVote": POLLING_STATION,
     "date de naissance": DATE_OF_BIRTH,
+    "date naissance": DATE_OF_BIRTH,
+    "DATE": DATE_OF_BIRTH,
     "nom d'usage": COMMON_NAME,
     "NomDusage": COMMON_NAME,
     "nom de naissance": BIRTH_NAME,
     "NomdeNaissance": BIRTH_NAME,
     "prénoms": FIRST_NAME,
+    "prenom": FIRST_NAME,
+    "prenoms": FIRST_NAME,
     
 }

@@ -3,7 +3,6 @@ from config import *
 
 from module.list.rename_column import rename_column
 
-from module.clean_fr.clean_fr_file.clean_date_fr import clean_date_fr
 from module.clean_fr.clean_fr_file.clean_gender_fr import clean_gender_fr
 from module.clean_fr.clean_fr_file.clean_zip_fr import clean_zip_fr
 from module.clean_fr.clean_fr_file.clean_mobile_fr import clean_mobile_fr
@@ -18,6 +17,7 @@ def clean_electoral_fr(my_file_to_clean):
     """
     clean electoral utf8 csv file
     column must be renamed according to config file
+    must create a date of birth column
 
     """
     df = pd.read_csv(

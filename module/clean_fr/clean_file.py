@@ -4,14 +4,12 @@ from config import *
 
 from module.clean_fr.clean_fr_file.clean_column_fr import clean_column_fr
 from module.clean_fr.clean_fr_file.clean_email_fr import clean_email_fr
-from module.clean_fr.clean_fr_file.clean_date_fr import clean_date_fr
 from module.clean_fr.clean_fr_file.clean_gender_fr import clean_gender_fr
 from module.clean_fr.clean_fr_file.clean_address_fr import clean_address_fr
 from module.clean_fr.clean_fr_file.clean_keyword_fr import clean_keyword_fr
 from module.clean_fr.clean_fr_file.clean_zip_fr import clean_zip_fr
 from module.clean_fr.clean_fr_file.clean_mobile_fr import clean_mobile_fr
 from module.clean_fr.clean_fr_file.clean_empty_name_fr import clean_empty_name_fr
-from module.clean_fr.clean_fr_file.create_csv_zip import create_csv_zip_file
 
 def clean_file_fr(my_file):
     """ 
