@@ -21,7 +21,7 @@ def clean_date (my_dataframe):
   # convert yyyy-mm-dd
   df['clean_date'] = pd.to_datetime(
     df['clean_date'],
-    errors='ignore',
+    errors='raise',
     dayfirst=True,)
 
   return df['clean_date']
