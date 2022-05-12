@@ -2,6 +2,8 @@ import pandas as pd
 
 from config import *
 
+from module.clean_fr.clean_fr_electoral.clean_date import clean_date
+
 from module.clean_fr.clean_fr_file.clean_column_fr import clean_column_fr
 from module.clean_fr.clean_fr_file.clean_email_fr import clean_email_fr
 from module.clean_fr.clean_fr_file.clean_gender_fr import clean_gender_fr
@@ -23,8 +25,6 @@ def clean_file_fr(my_file):
         low_memory=False, 
         sep=",",
         encoding="utf-8",
-        parse_dates=[DATE_OF_BIRTH],
-        dayfirst=True
         )
     
     # clean column
@@ -40,6 +40,7 @@ def clean_file_fr(my_file):
     df[ZIP] = clean_zip_fr(df)
     df[[MOBILE, 'phone_clean','mobile_clean']] = clean_mobile_fr(df)
     df[KEYWORD] = clean_keyword_fr(df)
+    df[DATE_OF_BIRTH] = clean_date(df)
     df = df.drop_duplicates()
     
     df.to_csv(my_pandas_folder+'cleanFile.csv',header=True,index=False,encoding='utf8',)

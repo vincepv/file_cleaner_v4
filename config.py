@@ -18,7 +18,7 @@ STREET = 'rue'
 ZIP = 'cp'
 
 
-DATE_OF_BIRTH = 'date'
+DATE_OF_BIRTH = 'date de naissance'
 GENDER = 'sexe'
 FIRST_NAME = 'prenom'
 LAST_NAME = 'nom'

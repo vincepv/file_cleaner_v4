@@ -12,6 +12,8 @@ from module.clean_fr.clean_fr_electoral.clean_electoral_col import clean_elector
 from module.clean_fr.clean_fr_electoral.create_adress2 import create_adresse2_electoral
 from module.clean_fr.clean_fr_electoral.clean_address import clean_address_electoral
 from module.clean_fr.clean_fr_electoral.create_keyword import create_keyword_electoral
+from module.clean_fr.clean_fr_electoral.clean_date import clean_date
+
 
 def clean_electoral_fr(my_file_to_clean):
     """
@@ -23,8 +25,7 @@ def clean_electoral_fr(my_file_to_clean):
     df = pd.read_csv(
         my_file_to_clean,
         low_memory=False,
-        parse_dates=[DATE_OF_BIRTH],
-        dayfirst=True)
+        )
     
     # clean header column
     df = df.rename(columns=rename_column)
@@ -38,7 +39,8 @@ def clean_electoral_fr(my_file_to_clean):
     df[[MOBILE, 'clean_phone','clean_mobile']] = clean_mobile_fr(df)
     df[ADDRESS] = clean_address_electoral(df) 
     df[KEYWORD] = create_keyword_electoral(df)
-    
+    df[DATE_OF_BIRTH] = clean_date(df)
+
     # remove duplicate
     df = df.drop_duplicates(subset=[FIRST_NAME, COMMON_NAME, BIRTH_NAME, DATE_OF_BIRTH],keep='first')
 
