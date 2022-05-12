@@ -24,6 +24,7 @@ def clean_file_fr(my_file):
         sep=",",
         encoding="utf-8",
         parse_dates=[DATE_OF_BIRTH],
+        dayfirst=True
         )
     
     # clean column

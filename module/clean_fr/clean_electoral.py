@@ -23,7 +23,8 @@ def clean_electoral_fr(my_file_to_clean):
     df = pd.read_csv(
         my_file_to_clean,
         low_memory=False,
-        parse_dates=[DATE_OF_BIRTH],)
+        parse_dates=[DATE_OF_BIRTH],
+        dayfirst=True)
     
     # clean header column
     df = df.rename(columns=rename_column)
