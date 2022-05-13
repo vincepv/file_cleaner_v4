@@ -1,5 +1,5 @@
 import pandas as pd
-import regex
+
 from config import DATE_OF_BIRTH
 
 
@@ -9,19 +9,20 @@ def clean_date (my_dataframe):
 
   #clean false date format
   
+  if DATE_OF_BIRTH not in df:
+        df.insert(loc=0, column=DATE_OF_BIRTH,value = '')
+
   clean_value = {
     '^00':'01',
     '/00/':'/01/',
-    '/0000$':'/2000',
   }
-
 
   df['clean_date'] = df[DATE_OF_BIRTH].replace(clean_value,regex=True)
 
-  # convert yyyy-mm-dd
+  # convert in: yyyy-mm-dd
   df['clean_date'] = pd.to_datetime(
     df['clean_date'],
-    errors='raise',
+    errors='ignore',
     dayfirst=True,)
 
   return df['clean_date']
