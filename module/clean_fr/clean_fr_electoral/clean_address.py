@@ -18,7 +18,8 @@ def clean_address_electoral (my_dataframe):
             '^ ':'',
             ' $':'',
             '/':' ',
-            '_':' ', 
+            '_':' ',
+            '\.0':'', 
         }
 
         df[ADDRESS] = df[ADDRESS].replace(clean_character, regex=True)
