@@ -2,6 +2,7 @@ from config import BIRTH_NAME, CITY, COMMON_NAME, DATE_OF_BIRTH, FIRST_NAME, GEN
 
 rename_column = {
     "LieuDit":"lieu-dit",
+    "Type et libellé de voie": STREET,
     "libellé de voie": STREET,
     "Libellé voie": STREET,
     "LibelleVoie": STREET,
@@ -9,6 +10,7 @@ rename_column = {
     "Num.voie": NUMBER,
     "numéro de voie": NUMBER,
     "numero de voie": NUMBER,
+    "Numéro de voie": NUMBER,
     "NumeroVoie": NUMBER,
     "libelle de l'ugle": CITY,
     "libellé de l'ugle": CITY,
@@ -16,6 +18,7 @@ rename_column = {
     "code postal": ZIP,
     "Code Postal": ZIP,
     "code du bureau de vote": POLLING_STATION,
+    "Code Bureau de vote": POLLING_STATION,
     "NoBureauDeVote": POLLING_STATION,
     "Bureau de vote": POLLING_STATION,
     "Bureau": POLLING_STATION,
