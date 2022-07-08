@@ -14,7 +14,7 @@ def merge_on_key(input1,input2):
 
     # key is used to merge 2 files
     # key = ['prenom','nom','cp'] or key = ['prenom']
-    key = ['prenom','nom','cp']
+    key = ['prenom','nom']
 
     df1[key] = df1[key].astype(str)
     df2[key] = df2[key].astype(str)
