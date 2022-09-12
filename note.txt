@@ -21,6 +21,10 @@ function clean_date(clean_number) => generate clean_date
 So each time you get a file. 
 You chose wich function you want, there is no order.
 
+Some script use mutliple function to clean file. 
+
+Pay attention to good naming for columns. Some bugs are only a bad column name.
+
 main.ipynb is the entry point and user interface of this small app
 
 
