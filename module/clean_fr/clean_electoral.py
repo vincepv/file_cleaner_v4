@@ -3,16 +3,16 @@ from config import *
 
 from module.list.rename_column import rename_column
 
-from module.clean_fr.clean_fr_file.clean_gender_fr import clean_gender_fr
-from module.clean_fr.clean_fr_file.clean_zip_fr import clean_zip_fr
-from module.clean_fr.clean_fr_file.clean_mobile_fr import clean_mobile_fr
+from module.clean_fr.regulare_file.clean_gender_fr import clean_gender_fr
+from module.clean_fr.regulare_file.clean_zip_fr import clean_zip_fr
+from module.clean_fr.regulare_file.clean_mobile_fr import clean_mobile_fr
 
-from module.clean_fr.clean_fr_electoral.clean_name import clean_name_electoral
-from module.clean_fr.clean_fr_electoral.clean_electoral_col import clean_electoral_col
-from module.clean_fr.clean_fr_electoral.create_adress2 import create_adresse2_electoral
-from module.clean_fr.clean_fr_electoral.clean_address import clean_address_electoral
-from module.clean_fr.clean_fr_electoral.create_keyword import create_keyword_electoral
-from module.clean_fr.clean_fr_electoral.clean_date import clean_date
+from module.clean_fr.electoral_file.clean_name import clean_name_electoral
+from module.clean_fr.electoral_file.clean_electoral_col import clean_electoral_col
+from module.clean_fr.electoral_file.create_adress2 import create_adresse2_electoral
+from module.clean_fr.electoral_file.clean_address import clean_address_electoral
+from module.clean_fr.electoral_file.create_keyword import create_keyword_electoral
+from module.clean_fr.electoral_file.clean_date import clean_date
 
 
 def clean_electoral_fr(my_file_to_clean):
