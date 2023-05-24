@@ -9,7 +9,7 @@ def merge_excel(excel_folder):
 
     """
     
-    all_files = glob.glob(excel_folder + "/*.xlsx")
+    all_files = glob.glob(excel_folder + "/*.xls")
     li = []
     for filename in all_files:
         df = pd.read_excel(filename, index_col=None, header=0)
