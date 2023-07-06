@@ -1,4 +1,5 @@
 import pandas as pd
+from unidecode import unidecode
 from config import my_pandas_folder
 
 
@@ -14,7 +15,7 @@ def merge_on_key(input1,input2):
 
     # key is used to merge 2 files
     # key = ['prenom','nom','cp'] or key = ['prenom']
-    key = ['prenom','nom']
+    key = ['prenom','nomUsage']
 
     df1[key] = df1[key].astype(str)
     df2[key] = df2[key].astype(str)
@@ -26,6 +27,14 @@ def merge_on_key(input1,input2):
 
     df2[key] = df2[key].apply(lambda x: x.str.strip())
     df2[key] = df2[key].apply(lambda x: x.str.capitalize())
+
+    # Function to remove accents from a string
+    def remove_accents(chaine):
+        return unidecode(chaine)
+
+    # Apply accent removal function on 'prenom' and 'nom' columns
+    df1[key] = df1[key].applymap(remove_accents)
+    df2[key] = df2[key].applymap(remove_accents)
 
     # create duplicate file to tracks duplicate contact not in merge file
     df1_duplicate = df1[df1.duplicated(subset=key, keep=False)]
