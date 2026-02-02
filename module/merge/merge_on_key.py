@@ -15,7 +15,7 @@ def merge_on_key(input1,input2):
 
     # key is used to merge 2 files
     # key = ['prenom','nom','cp'] or key = ['prenom']
-    key = ['id']
+    key = ['Prenom', 'Nom de naissance', 'Date de naissance']
 
     df1[key] = df1[key].astype(str)
     df2[key] = df2[key].astype(str)
@@ -33,8 +33,8 @@ def merge_on_key(input1,input2):
         return unidecode(chaine)
 
     # Apply accent removal function on 'prenom' and 'nom' columns
-    df1[key] = df1[key].applymap(remove_accents)
-    df2[key] = df2[key].applymap(remove_accents)
+    df1[key] = df1[key].map(remove_accents)
+    df2[key] = df2[key].map(remove_accents)
 
     # create duplicate file to tracks duplicate contact not in merge file
     df1_duplicate = df1[df1.duplicated(subset=key, keep=False)]
